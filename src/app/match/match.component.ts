@@ -17,7 +17,7 @@ export class MatchComponent implements OnInit {
 
 
 book(){
-  this.router.navigate(["/booking"]);
+  this.router.navigate(["/login"]);
 }
 }
 

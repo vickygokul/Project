@@ -3,18 +3,18 @@
         <div class="row" >
             <div class="col-sm-5" id="color">
                     <form class="form-horizontal" action="/action_page.php">
-                        <h2 style="text-align: center">Login Form</h2>
+                        <h2 style="text-align: center">Sign In</h2>
                         <br>
                       <div class="form-group">
-                        <label class="control-label col-sm-offset-1 col-sm-3 " for="email">UserName :</label>
-                        <div class="col-xs-6">
-                          <input type="text" class="form-control input-sm" id="uname" placeholder="Enter UserName" name="uname">
+                        <label class="control-label col-sm-offset-1 col-sm-4 " for="email">Username :</label>
+                        <div class="col-sm-5">
+                          <input type="text" class="form-control" [(ngModel)]="model.username" id="uname" placeholder="Enter username" name="username">
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="control-label col-sm-offset-1 col-sm-3" for="pwd">Password :</label>
-                        <div class="col-xs-6">          
-                          <input type="password" class="form-control input-sm" id="pwd" placeholder="Enter password" name="pwd">
+                        <label class="control-label col-sm-offset-1 col-sm-4" for="pwd">Password :</label>
+                        <div class="col-sm-5">          
+                          <input type="password" class="form-control" [(ngModel)]="model.password" id="pwd" placeholder="Enter Password" name="password">
                         </div>
                       </div>
                       <div class="form-group">        
@@ -24,68 +24,84 @@
                           </div>
                         </div>
                         <div class="col-sm-5">
-                                <a href="forgot.html">forgot password?</a>
+                                <a href="forgot.html"><b>Forgot password ?</b></a>
                             </div>
                       </div>
                      
                       <div class="form-group">        
                         <div class="col-sm-offset-3 col-sm-6">
-                          <button type="submit" class="btn btn-primary" (click)="pay()">Login</button>
+                          <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
                         </div>
                       </div>
                     </form>              
 </div>
     <div class="col-sm-offset-1 col-sm-6"id="color">
             <form class="form-horizontal" action="/action_page.php">
-                <h2 style="text-align: center">Registration Form</h2>
+                <h2 style="text-align: center">Sign Up & Join Us</h2>
+                <div class="col-sm-offset-2 alert alert-info input-sm col-sm-8" style="padding: 5px;font-size: 14px">
+                  <strong>Info ! </strong>Please login after registering to proceed further.
+                </div>
                 <br>
                 <div class="form-group">
-                    <label class="control-label col-sm-offset-1 col-sm-3" >FirstName :</label>
-                    <div class="col-xs-6">
-                    <input type="text" class="form-control input-sm" id="fname" placeholder="Enter first name" name="fname">
+                    <label class="control-label col-sm-offset-1 col-sm-3" >Firstname :</label>
+                    <div class="col-sm-6">
+                    <input type="text" class="form-control" id="fname" placeholder="Ex:John,Catherine" name="fname"
+                    [(ngModel)]="model1.firstname" 
+                  #firstname="ngModel">
                     </div>
                 </div>
                 <div class="form-group">
-                        <label class="control-label col-sm-offset-1 col-sm-3">LastName :</label>
-                  <div class="col-xs-6">
-                        <input type="text" class="form-control input-sm" id="lname" placeholder="Enter last name" name="lname">
+                        <label class="control-label col-sm-offset-1 col-sm-3">Lastname :</label>
+                  <div class="col-sm-6">
+                        <input type="text" class="form-control" id="lname" placeholder="Ex:Smith,D'souza" name="lname"
+                        [(ngModel)]="model1.lastname" 
+                        #lastname="ngModel">
                   </div>
                 </div>
                 <div class="form-group">
-                        <label class="control-label col-sm-offset-1 col-sm-3" for="uname">UserName :</label>
-                    <div class="col-xs-6">
-                        <input type="text" class="form-control input-sm" id="uname" placeholder="Enter UserName" name="uname">
+                        <label class="control-label col-sm-offset-1 col-sm-3" for="uname">Username :</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="uname1" placeholder="Enter username" name="uname"
+                        [(ngModel)]="model1.username" 
+                        #username="ngModel">
                     </div>
                 </div>
                 <div class="form-group">
                             <label class="control-label col-sm-offset-1 col-sm-3"for="email">Email :</label>
-                        <div class="col-xs-6">
-                            <input type="text" class="form-control input-sm" id="email" placeholder="Enter Mail-Id" name="email">
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="email" placeholder="Enter email-Id" name="email"
+                            [(ngModel)]="model1.email" 
+                            #email="ngModel" >
                         </div>
                     </div>
-                    <div class="form-group">
-                                <label class="control-label col-sm-offset-1 col-sm-3"for="mobileno">MobileNo :</label>
-                            <div class="col-xs-6">
-                                <input type="text" class="form-control input-sm" id="mobileno" placeholder="Enter MobileNo" name="mobileno">
-                            </div>
-                        </div>
+                   
                         <div class="form-group">
                                     <label  class="control-label col-sm-offset-1 col-sm-3" for="pwd">Password :</label>
-                                <div class="col-xs-6">
-                                    <input type="text" class="form-control input-sm" id="pwd" placeholder="Enter Password" name="pwd">
+                                <div class="col-sm-6">
+                                    <input type="password" class="form-control" id="pwd1" placeholder="Enter Password" name="pwd"
+                                    [(ngModel)]="model1.password" 
+                                    #password="ngModel">
                                 </div>
                             </div>
+                            <div class="form-group">
+                              <label class="control-label col-sm-offset-1 col-sm-3"for="mobileno">Mobile :</label>
+                          <div class="col-sm-6">
+                              <input type="text" class="form-control" id="mobileno" placeholder="Enter Mobile number" name="mobileno"
+                              [(ngModel)]="model1.mobileNo" 
+                              #mobileNo="ngModel">
+                          </div>
+                      </div>
               
                 <div class="form-group">        
                         <div class="col-sm-offset-2 col-sm-9">
                           <div class="checkbox">
-                            <label><input type="checkbox" name="term"> I agree to Terms and Conditions</label>
+                            <label><input type="checkbox" name="term"> I agree to the terms and conditions</label>
                           </div>
                         </div>
                       </div>
                 <div class="form-group">        
                   <div class="col-sm-offset-3 col-sm-6">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary" (click)="submit()">Submit</button>
                   </div>
                 </div>
               </form>          

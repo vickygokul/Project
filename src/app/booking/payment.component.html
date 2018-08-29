@@ -1,39 +1,23 @@
 
- 
-   
-     <div class="panel-heading display-table" style="margin-top: 25px;margin-left: 14px">
+ <div id="main"></div>
+     <div class="panel-heading display-table" style="margin-top: 25px;margin-left: 20px">
         <div class="row display-tr" >
-            <h3 class="panel-title display-td" >Payment Details</h3>
-            <div class="display-td" >                            
-                <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+            <h2><b></b>Select the payment method : </h2>
+            <div class="display-td" >                          
             
                </div>
              </div>
            </div>
-<div class="radio">
+           <div class="small-icons" style="margin-left: 20px">
+             <img src="../../assets/paylogos.jpg">
 
-             <label style="margin-top: 30px">
+           </div>
+<div class="radio" style=" margin-left: 20px">
+
+             <label style="margin-top: 30px; font-size: 20px">
                <input  type="radio" name="cards" value="3"  (change)="updateUI('3')">Net Banking</label>
              
              <div id="card3" [hidden]="!isNetBanking"> 
-                 <!-- <div class="dropdown">
-                     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                       Select Name of The Bank
-                     </button>
-                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                       <button class="dropdown-item" type="button">State Bank of India</button>
-                       <div class="dropdown-divider"></div>
-                       <button class="dropdown-item" type="button">HDFC</button>
-                       <div class="dropdown-divider"></div>
-                       <button class="dropdown-item" type="button">Central Bank Of India</button>
-                       <div class="dropdown-divider"></div>
-                       <button class="dropdown-item" type="button">Axis Bank</button>
-                       <div class="dropdown-divider"></div>
-                       <button class="dropdown-item" type="button">Indian Bank</button>
-                    
-                     </div>
-                   </div>
-                   <br> -->
                    <datalist id="banks">
                        <option > SBI</option>
                        <option >Indian Bank</option>
@@ -44,17 +28,17 @@
 
                      </datalist>
                      <input list="banks" type="text">
-                   <button type="button" class="btn btn-outline-primary mr-2" [routerLink]="['confirm']"
+                   <button type="button" class="btn btn-outline-primary mr-2" (click)="success()"
                           >
                          Pay
                        </button>
-                       <button type="button" class="btn btn-outline-warning mr-2" [routerLink]="['../home']">
+                       <button type="button" class="btn btn-outline-warning mr-2" (click)="cancel()">
                        Cancel </button>
              </div>
            </div>
 
-         <div class="radio">
-          <label style="margin-top: 20px"><input  type="radio" name="cards" (change)="updateUI('2')">Credit card</label>
+         <div class="radio" style="margin-left: 20px">
+          <label style="margin-top: 20px; font-size: 20px"><input  type="radio" name="cards" (change)="updateUI('2')">Credit card</label>
 
           <div id="card1" [hidden]="!isCreditCard" > 
 
@@ -112,11 +96,11 @@
                            placeholder="Card Holder's Name"
                              class="form-control"   />
                          </div>
-                       <button type="button" class="btn btn-outline-primary mr-2" [routerLink]="['confirm']"
+                       <button type="button" class="btn btn-outline-primary mr-2" (click)="success()"
                           >
                          Pay
                        </button>
-                       <button type="button" class="btn btn-outline-warning mr-2" [routerLink]="['../home']" >
+                       <button type="button" class="btn btn-outline-warning mr-2" (click)="cancel()" >
                        Cancel </button>
                        
                        
@@ -131,8 +115,8 @@
 
 
           </div>
-          <div class="radio">
-             <label style="margin-top: 20px"><input type="radio" name="cards" (change)="updateUI('1')">Debit card</label>
+          <div class="radio" style="margin-left: 20px">
+             <label style="margin-top: 20px; font-size: 20px"><input type="radio" name="cards" (change)="updateUI('1')">Debit card</label>
 
 
 
@@ -191,12 +175,12 @@
                            placeholder="Card Holder's Name"
                              class="form-control"   />
                          </div>
-                       <button type="button" class="btn btn-outline-primary mr-2" [routerLink]="['confirm']"
+                       <button type="button" class="btn btn-outline-primary mr-2" (click)="success()"
                           >
                          Pay
                        </button>
-                       <button type="button" class="btn btn-outline-warning mr-2" [routerLink]="['../home']">
-                       Cancel </button>
+                       <button type="button" class="btn btn-outline-warning mr-2" (click)="success()">
+                          Cancel </button>
                        
                        
                    </form>
@@ -204,6 +188,6 @@
 
                  </div>
                </div>
-           
+               
              
-          
+  </div>        

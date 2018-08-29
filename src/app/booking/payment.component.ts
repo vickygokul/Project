@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '../../../node_modules/@angular/router';
 
 @Component({
   selector: 'app-payment',
@@ -18,7 +19,7 @@ export class PaymentComponent implements OnInit {
   netBanking:any=3; 
   
    
-   constructor() { }
+   constructor(private router:Router) { }
   
     
   ngOnInit() {
@@ -43,6 +44,12 @@ export class PaymentComponent implements OnInit {
    else if(mode=="1")
        
    this.isDebitCard=true;
+    }
+    success(){
+      this.router.navigate(["/paymentstatus"]);
+    }
+    cancel(){
+      this.router.navigate(["/paymentcancel"]);
     }
   
   }

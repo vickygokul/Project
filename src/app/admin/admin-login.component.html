@@ -1,0 +1,30 @@
+<div class="container" style="font-family: georgia">
+  <div class="row" >
+      <div class="col-sm-5" id="color">
+              <form class="form-horizontal" action="/action_page.php">
+                  <h2 style="text-align: center">Admin Login</h2>
+                  <br>
+                <div class="form-group">
+                  <label class="control-label col-sm-offset-1 col-sm-3 " for="email">Username :</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="model.username" 
+                    #username="ngModel" id="uname" placeholder="Admin Username" name="username">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-offset-1 col-sm-3" for="pwd">Password :</label>
+                  <div class="col-sm-6">          
+                    <input type="password" class="form-control" [(ngModel)]="model.password" 
+                    #password="ngModel" id="pwd" placeholder="Admin Password" name="password">
+                  </div>
+                </div>
+                <div class="form-group">        
+                  <div class="col-sm-offset-3 col-sm-6">
+                    <button type="submit" class="btn btn-primary" (click)="adminLogin()">Login</button>
+                  </div>
+                </div>
+                </form>
+                </div>
+                </div>
+                </div>
+                
